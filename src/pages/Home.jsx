@@ -28,7 +28,7 @@ export default function Home() {
       <div className=" flex gap-3 items-center justify-evenly ">
         <Link to="/movies">
           <button className=" text-6xl border border-none hover:-translate-y-3 flex justify-center items-center rounded-3xl bg-primary text-black p-5">
-            Browse movies <ArrowRight size={80} />
+            Browse Movies <ArrowRight size={80} />
           </button>
         </Link>
         <Link to="tvShows">

@@ -21,7 +21,7 @@ const Movie = ({ movie }) => {
         <p>{movie.vote_count === 0 ? "N/A" : Math.round(movie.vote_average)}</p>
         <p>Released: {movie.release_date.split("-")[0]}</p>
       </div>
-      <p className=" font-montserrat text-base font-thin pl-3 h-24">
+      <p className=" font-montserrat text-base font-thin pl-3 h-24 text-left">
         {movie.title}
       </p>
     </div>

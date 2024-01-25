@@ -23,7 +23,7 @@ const TVShow = ({ tvShow }) => {
         </p>
         <p>Aired: {tvShow.first_air_date.split("-")[0]}</p>
       </div>
-      <p className=" font-montserrat text-base font-thin pl-3 h-24">
+      <p className=" font-montserrat text-base font-thin pl-3 h-24 text-left">
         {tvShow.name}
       </p>
     </div>
