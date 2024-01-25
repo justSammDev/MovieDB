@@ -15,7 +15,7 @@ export default function Home() {
           <span className=" font-kanit italic text-8xl text-transparent bg-clip-text text-stroke">
             search{" "}
           </span>
-          for all movies
+          for all Movies and TvShows
         </p>
         <div className=" flex-1 w-full overflow-hidden border border-none rounded ">
           <img
