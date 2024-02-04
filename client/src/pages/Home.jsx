@@ -1,7 +1,24 @@
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  useEffect(() => {
+    const clearLocalStorage = () => {
+      localStorage.removeItem("profile");
+      window.location.reload();
+    };
+
+    window.addEventListener("beforeunload", clearLocalStorage);
+
+    return () => {
+      setTimeout(() => {
+        clearLocalStorage();
+      }, 3600000);
+
+      window.removeEventListener("beforeunload", clearLocalStorage);
+    };
+  }, []);
   return (
     <main className=" mx-20 py-5">
       <div className=" flex gap-3 items-center py-10 h-3/4">
