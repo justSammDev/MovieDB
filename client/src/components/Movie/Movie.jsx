@@ -14,7 +14,7 @@ const Movie = ({ movie }) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PlusCircle size={30} color="#000000" />{" "}
+          <PlusCircle size={30} color="#000000" />
         </div>
         {isHovered && (
           <div className="absolute  -top-9 -right-3 font-kanit bg-white p-2 text-black shadow rounded-lg opacity-65">

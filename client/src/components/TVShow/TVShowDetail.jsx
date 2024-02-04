@@ -50,7 +50,6 @@ const TVShowDetail = () => {
 
   const handleAddToFavourites = async () => {
     const data = await addToFavouriteTvShows(imdbId);
-    console.log(data);
     setAddedToFavourites((prev) => !prev);
   };
 

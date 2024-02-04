@@ -1,7 +1,9 @@
-import mongoose from "mongoose";
 import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const createUser = async (req, res) => {
   const { email, userName, firstName, lastName, password } = req.body;
@@ -29,9 +31,13 @@ export const createUser = async (req, res) => {
   try {
     await newUser.save();
 
-    const jti = jwt.sign({ email: newUser.email, id: newUser._id }, "test", {
-      expiresIn: "1h",
-    });
+    const jti = jwt.sign(
+      { email: newUser.email, id: newUser._id },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
 
     res.status(200).json({
       email: newUser.email,
@@ -62,7 +68,7 @@ export const checkUser = async (req, res) => {
 
     const jti = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "test",
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
     res.status(200).json({
@@ -89,7 +95,7 @@ export const googleLogin = async (req, res) => {
   if (existingUser) {
     const jti = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "test",
+      process.env.JWT_SECRET,
       {
         expiresIn: "1h",
       }
@@ -120,9 +126,13 @@ export const googleLogin = async (req, res) => {
   try {
     await newUser.save();
 
-    const jti = jwt.sign({ email: newUser.email, id: newUser._id }, "test", {
-      expiresIn: "1h",
-    });
+    const jti = jwt.sign(
+      { email: newUser.email, id: newUser._id },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
 
     res.status(200).json({
       email: newUser.email,

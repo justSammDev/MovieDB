@@ -15,6 +15,7 @@ const MovieDetail = () => {
   const [noMedia, setNoMedia] = useState(false);
   const [imdbId, setImdbId] = useState("");
   const [addedToFavourites, setAddedToFavourites] = useState(false);
+  const [user, setUser] = useState({});
 
   const { mediaId } = useParams();
 
@@ -58,7 +59,6 @@ const MovieDetail = () => {
       setAddedToFavourites(true);
     } else {
       const data = await removeFromFavourites(imdbId);
-      console.log(data);
       setAddedToFavourites(false);
     }
   };
@@ -75,11 +75,13 @@ const MovieDetail = () => {
   useEffect(() => {
     if (imdbId) {
       fetchMedia();
-      getUserData().then((user) => {
-        if (user.favouriteMovies.includes(imdbId)) {
-          setAddedToFavourites(true);
-        }
-      });
+      getUserData()
+        .then((user) => {
+          if (user.favouriteMovies.includes(imdbId)) {
+            setAddedToFavourites(true);
+          }
+        })
+        .finally(setUser(user));
     }
   }, [imdbId]);
 
@@ -105,19 +107,23 @@ const MovieDetail = () => {
               <h3 className=" font-montserrat text-3xl font-extrabold">
                 {media.title}
               </h3>
-              <div
-                className="font-montserrat text-lg cursor-pointer flex items-center justify-center gap-2"
-                onClick={(e) => {
-                  handleAddToFavourites();
-                }}
-              >
-                Add to favourites
-                {addedToFavourites ? (
-                  <BookmarkCheck color="blue" size={30} />
-                ) : (
-                  <BookmarkPlus color="grey" size={30} />
-                )}
-              </div>
+              {user ? (
+                <div
+                  className="font-montserrat text-lg cursor-pointer flex items-center justify-center gap-2"
+                  onClick={() => {
+                    handleAddToFavourites();
+                  }}
+                >
+                  Add to favourites
+                  {addedToFavourites ? (
+                    <BookmarkCheck color="blue" size={30} />
+                  ) : (
+                    <BookmarkPlus color="grey" size={30} />
+                  )}
+                </div>
+              ) : (
+                <p className="font-montserrat text-lg">Log In to add</p>
+              )}
             </div>
             <div className="pl-3 flex gap-8">
               <div className=" flex gap-3">
