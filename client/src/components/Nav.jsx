@@ -14,8 +14,8 @@ const Nav = () => {
     <nav className=" flex justify-evenly list-none items-center p-4 mx-10 font-kanit text-2xl ">
       <li>
         <Link to="/">
-          <div className=" w-12 aspect-square border overflow-hidden rounded-3xl cursor-pointer">
-            <img src="../../public/favicon.ico" alt="Logo" />
+          <div className=" w-12 aspect-square border bg-cyan-50 overflow-hidden rounded-3xl cursor-pointer">
+            <img src="../../public/movie.png" alt="Logo" />
           </div>
         </Link>
       </li>
