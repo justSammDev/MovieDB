@@ -26,7 +26,7 @@ const Movie = ({ movie }) => {
           <img
             src={
               !movie.poster_path
-                ? "../../public/images/noMovie.jpg"
+                ? "../images/noMovie.jpg"
                 : `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
             }
             className=" object-cover w-full h-full"

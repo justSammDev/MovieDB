@@ -15,7 +15,7 @@ const Nav = () => {
       <li>
         <Link to="/">
           <div className=" w-12 aspect-square border bg-cyan-50 overflow-hidden rounded-3xl cursor-pointer">
-            <img src="/public/images/movie.png" alt="Logo" />
+            <img src="../images/movie.png" alt="Logo" />
           </div>
         </Link>
       </li>

@@ -29,7 +29,7 @@ const TVShow = ({ tvShow }) => {
           <img
             src={
               !tvShow.poster_path
-                ? "../../public/images/noTvShow.jpg"
+                ? "../images/noTvShow.jpg"
                 : `https://image.tmdb.org/t/p/w500/${tvShow.poster_path}`
             }
             className=" object-cover w-full h-full"
