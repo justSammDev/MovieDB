@@ -10,7 +10,7 @@ import UserDetail from "./pages/UserDetail";
 
 export default function App() {
   return (
-    <div className="relative font-montserrat flex  flex-col gap-10 text-text">
+    <div className="relative font-montserrat flex  flex-col lg:gap-10 text-text">
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

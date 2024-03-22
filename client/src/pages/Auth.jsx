@@ -196,7 +196,7 @@ const Auth = () => {
             {alertMessage}
           </p>
 
-          <div className=" flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 items-center">
             <label
               htmlFor="userName"
               className=" text-lg text-text font-montserrat"
@@ -226,7 +226,7 @@ const Auth = () => {
               value={formData.email}
             />
           </div>
-          <div className=" flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 items-center">
             <label
               htmlFor="firstName"
               className=" text-lg text-text font-montserrat"
@@ -256,7 +256,7 @@ const Auth = () => {
               value={formData.lastName}
             />
           </div>
-          <div className=" flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 items-center">
             <label
               htmlFor="password"
               className=" text-lg text-text font-montserrat"
@@ -286,7 +286,7 @@ const Auth = () => {
               value={formData.confirmPassword}
             />
           </div>
-          <div className="flex gap-2 justify-center items-baseline self-center pt-4">
+          <div className="flex flex-col lg:flex-row gap-2 justify-center items-baseline self-center pt-4">
             <button
               type="submit"
               className={`bg-primary hover:bg-teal-700 text-black font-bold py-2 px-4 rounded mr-2 ${

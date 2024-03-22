@@ -154,7 +154,7 @@ const TVShows = () => {
             No Tv Shows Found!!
           </h2>
         ) : (
-          <div className="grid grid-cols-6 gap-3 p-5">
+          <div className="grid grid-cols-2 p-3 gap-1 md:grid-cols-4 lg:grid-cols-6 lg:gap-3 lg:p-5">
             {tvShows.map((tvShow) => (
               <TVShow key={tvShow.id} tvShow={tvShow} />
             ))}

@@ -78,21 +78,21 @@ const TVShowDetail = () => {
       {noMedia ? (
         <p className=" font-montserrat text-9xl font-extrabold">NO TV SHOW!!</p>
       ) : (
-        <div className="flex justify-center items-center gap-5 w-9/12">
-          <div className="overflow-hidden w-1/3">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-5 w-full lg:w-9/12">
+          <div className="overflow-hidden w-full lg:w-1/3">
             {media.poster_path ? (
               <img
                 src={`https://image.tmdb.org/t/p/w500/${media.poster_path}`}
-                className=" w-[200px] h-[300px] "
+                className=" w-full h-full object-cover "
                 alt="TvShow Poster"
               />
             ) : (
               <p className=" font-montserrat text-4xl font-bold">No Img</p>
             )}
           </div>
-          <div className=" flex flex-col gap-8 w-2/3">
-            <div className=" flex items-center justify-evenly flex-row">
-              <h3 className=" font-montserrat text-3xl font-extrabold">
+          <div className=" flex flex-col gap-8 lg:w-2/3">
+            <div className=" flex items-center gap-3 justify-evenly flex-col md:flex-row lg:flex-row">
+              <h3 className=" font-montserrat text-xl md:text-2xl  lg:text-3xl font-extrabold">
                 {media.name}
               </h3>
               <div
@@ -109,7 +109,7 @@ const TVShowDetail = () => {
                 )}
               </div>
             </div>
-            <div className="pl-3 flex gap-8">
+            <div className="pl-3 flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row lg:gap-8">
               <div className=" flex gap-3">
                 <Star color="#0080ff" fill="#0080ff" width={18} />
                 {!isNaN(media.vote_average) && (
@@ -128,7 +128,7 @@ const TVShowDetail = () => {
                   {media.vote_count === 0 ? "N/A" : media.vote_count}
                 </p>
               )}
-              <p className=" pl-5">
+              <p className="md:pl-5 lg:pl-5">
                 <span className="font-montserrat text-lg font-bold">
                   Language:{" "}
                 </span>
@@ -141,7 +141,7 @@ const TVShowDetail = () => {
               </span>
               {media.overview}
             </p>
-            <div className=" flex gap-4">
+            <div className=" flex gap-4 justify-center items-center">
               <p>
                 <span className="font-montserrat text-lg font-bold">
                   Aired date:

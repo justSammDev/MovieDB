@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
   return (
     <main className=" mx-20 py-5">
-      <div className=" flex gap-3 items-center py-10 h-3/4">
+      <div className=" flex gap-3 items-center justify-evenly py-10 h-3/4">
         <p className=" text-center flex-1 text-[5rem] sm: leading-none font-montserrat">
           This is
           <br />
@@ -42,15 +42,15 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className=" flex gap-3 sm:flex sm:flex-col  items-center justify-evenly ">
+      <div className="flex flex-col gap-3 items-center justify-evenly sm:flex-row sm:justify-center sm:gap-5">
         <Link to="/movies">
-          <button className=" text-6xl border border-none hover:-translate-y-3 flex justify-center items-center rounded-3xl bg-primary text-black p-5">
+          <button className="text-6xl border border-none hover:-translate-y-3 flex justify-center items-center rounded-3xl bg-primary text-black p-5 mt-3 sm:mt-0">
             Browse Movies <ArrowRight size={80} />
           </button>
         </Link>
         <Link to="tvShows">
-          <button className=" text-6xl border border-none hover:-translate-y-3 flex justify-center items-center rounded-3xl bg-secondary text-black p-5">
-            Browse TVShows <ArrowRight size={80} />
+          <button className="text-6xl border border-none hover:-translate-y-3 flex justify-center items-center rounded-3xl bg-secondary text-black p-5 mt-3 sm:mt-0">
+            Browse TV <ArrowRight size={80} />
           </button>
         </Link>
       </div>

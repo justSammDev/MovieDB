@@ -10,7 +10,7 @@ const TVShow = ({ tvShow }) => {
 
   return (
     <Link to={`/tvShows/${tvShow.name}/${tvShow.id}`}>
-      <div className=" flex gap-3 flex-col bg-[#071E1E] max-h-[40rem] relative">
+      <div className=" flex gap-3 flex-col bg-[#071E1E] max-h-[40rem] justify-center items-center relative">
         <div
           className="absolute -right-2 -top-1 w-12 h-10 flex items-center opacity-50 hover:opacity-100 justify-center"
           onMouseEnter={() => setIsHovered(true)}
@@ -25,7 +25,7 @@ const TVShow = ({ tvShow }) => {
             <div className="w-3 h-4 absolute right-4 bg-white transform rotate-45 -mt-1"></div>
           </div>
         )}
-        <div className=" w-[208.167px] h-[312.25px] overflow-hidden">
+        <div className=" w-full h-[312.25px] pt-2 md:pt-0 lg:p-0 overflow-hidden">
           <img
             src={
               !tvShow.poster_path

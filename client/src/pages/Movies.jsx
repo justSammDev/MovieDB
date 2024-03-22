@@ -117,7 +117,7 @@ const Movies = () => {
         <Search onSearch={onSearch} pageNo={searchPageNo} />
         <h1 className=" pb-5 font-montserrat font-bold text-4xl">Movies</h1>
       </div>
-      <div className="flex justify-center my-4 gap-10 items-center">
+      <div className="flex justify-center my-4 gap-4 lg:gap-10 items-center">
         <button
           onClick={handlePrevClick}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
@@ -155,7 +155,7 @@ const Movies = () => {
             No Movies Found!!
           </h2>
         ) : (
-          <div className="grid grid-cols-6 gap-3 p-5">
+          <div className="grid grid-cols-2 p-3 gap-1 md:grid-cols-4 lg:grid-cols-6 lg:gap-3 lg:p-5">
             {movies.map((movie) => (
               <Movie key={movie.id} movie={movie} />
             ))}
